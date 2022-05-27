@@ -1,0 +1,26 @@
+Code for Door Frame 1.
+
+sphere1 = createSphere();
+sphere1.position.set(30,25,100);
+scene.add(sphere1);
+sphere1a = createSphere();
+sphere1a.position.set(30,0,100);
+scene.add(sphere1a);
+sphere4 = createSphere();
+sphere4.position.set(80,25,100);
+scene.add(sphere4);
+sphere4a = createSphere();
+sphere4a.position.set(80,0,100);
+scene.add(sphere4a);
+sphere3 = createSphere();
+sphere3.position.set(80,25,40);
+scene.add(sphere3);
+sphere3a = createSphere();
+sphere3a.position.set(80,0,40);
+scene.add(sphere3a);
+sphere3 = createSphere();
+sphere3.position.set(30,25,40);
+scene.add(sphere3);
+sphere3a = createSphere();
+sphere3a.position.set(30,0,40);
+scene.add(sphere3a);
