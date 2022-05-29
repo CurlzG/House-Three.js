@@ -59,6 +59,12 @@ function createWall(color){
   const wall = new THREE.Mesh( geowall1, matwall1 );
   return wall;
 }
+function createInsdeWall(color,x,y){
+  const geowall1= new THREE.PlaneGeometry( x, y, 1, 1 );
+  const matwall1 = new THREE.MeshBasicMaterial( {color: color, side: THREE.DoubleSide} );
+  const wall = new THREE.Mesh( geowall1, matwall1 );
+  return wall;
+}
 
 //Wall 1 0x34ebae
 wall1 = createWall(0x34ebae);
@@ -67,6 +73,12 @@ wall3 = createWall(0xb020a2);
 wall3.rotation.y -= Math.PI/2
 wall4 = createWall(0xeb4034);
 wall4.rotation.y -= Math.PI/2
+LeftLoungeWall = createInsdeWall(0xb020a2,50,100);
+LeftLoungeWall.rotation.y -= Math.PI/2;
+BotLoungeWall = createInsdeWall(0xb020a2,250,100);
+TopLoungeWall = createInsdeWall(0xb020a2,50,100);
+TopLoungeWall.rotation.y -= Math.PI/2;
+BottomDinWall = createInsdeWall(0xb020a2,125,100);
 
 // Creating extra Walls and adding them 
 /**
@@ -85,9 +97,13 @@ wall1.position.set( floor.position.x, floor.position.y+wall1.geometry.parameters
 wall2.position.set(floor.position.x, floor.position.y+wall2.geometry.parameters.height/2, floor.position.z-floor.geometry.parameters.height/2);
 wall3.position.set(floor.position.x-floor.geometry.parameters.height/2, floor.position.y+wall1.geometry.parameters.height/2, floor.position.z);
 wall4.position.set(floor.position.x+floor.geometry.parameters.height/2, floor.position.y+wall1.geometry.parameters.height/2, floor.position.z);
+LeftLoungeWall.position.set(0,50,225);
+BotLoungeWall.position.set(125,50,60);
+TopLoungeWall.position.set(0,50,85);
+BottomDinWall.position.set(-62,50,110);
 //shape.position.set(floor.position.x,floor.position.y,floor.position.z);
 //roof.position.set(floor.position.x,floor.position.y+wall1.geometry.parameters.height,floor.position.z);
-console.log(wall1.position)
+//console.log(wall1.position)
 //const hole = new THREE.Path()
 
 const House = new THREE.Group();
@@ -98,6 +114,11 @@ House.add(wall1);
 House.add(wall2);
 House.add(wall3);
 House.add(wall4);
+House.add(LeftLoungeWall);
+House.add(BotLoungeWall);
+House.add(TopLoungeWall);
+House.add(BottomDinWall);
+
 //House.add(roof);
 //House.add(wall5);
 //House.add(wall6);
@@ -114,13 +135,13 @@ function createSphere(){
 function createLoungeWall(){
   var wallPoints = new Array();
     //Creates Small Left Wall
-  sphere1 = createSphere(); 
+  //sphere1 = createSphere(); 
 
-  sphere1.position.set(0,5,250)
-  wallPoints.push(sphere1);
-  sphere2 = createSphere(); 
-  sphere2.position.set(0,5,200)
-  wallPoints.push(sphere2)
+  //sphere1.position.set(0,5,250)
+  //wallPoints.push(sphere1);
+  //sphere2 = createSphere(); 
+  //sphere2.position.set(0,5,200)
+  //wallPoints.push(sphere2)
 
   //Creates Large Wall 
   sphere3 = createSphere();
@@ -205,7 +226,7 @@ function createBedroomWall(){
   wallPoints.push(sphere5);
   return wallPoints;
 }
-diamonds = diamonds.concat(diamonds,createLoungeWall());
+//diamonds = diamonds.concat(diamonds,createLoungeWall());
 diamonds = diamonds.concat(diamonds,createDiningWall());
 diamonds = diamonds.concat(diamonds,createKitchenWall());
 diamonds = diamonds.concat(diamonds,createBedroomWall());

@@ -24,3 +24,12 @@ scene.add(sphere3);
 sphere3a = createSphere();
 sphere3a.position.set(30,0,40);
 scene.add(sphere3a);
+
+sphere1.position.set(30,25,100);
+sphere1a.position.set(30,0,100);
+sphere4.position.set(80,25,100);
+sphere4a.position.set(80,0,100);
+sphere3.position.set(80,25,40);
+sphere3a.position.set(80,0,40);
+sphere3.position.set(30,25,40);
+sphere3a.position.set(30,0,40);
